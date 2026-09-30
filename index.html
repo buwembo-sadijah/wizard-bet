@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BetZone — Sports & Casino</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="brand">BET<span>ZONE</span></div><nav>
+<a href="#sports">Sports</a><a href="#casino">Casino</a><a href="#betslip">Bet Slip</a><a href="#wallet">Wallet</a><a href="#admin">Admin</a>
+</nav><button class="balance" onclick="deposit()">UGX <span id="balance">100000</span></button></header>
+
+<main>
+<section class="hero"><div><p class="eyebrow">SPORTS • LIVE • CASINO</p><h1>Bet smarter. Play responsibly.</h1><p>Full betting-platform prototype with virtual money.</p><button onclick="document.querySelector('#sports').scrollIntoView()">Start betting</button></div>
+<div class="hero-card"><b>Demo balance</b><strong>UGX <span id="heroBalance">100000</span></strong><small>Virtual money only</small></div></section>
+
+<section id="sports"><div class="section-head"><h2>⚽ Sports</h2><span>Popular matches</span></div><div id="matches" class="grid"></div></section>
+
+<section id="casino"><div class="section-head"><h2>🎰 Casino</h2><span>20 demo games</span></div><div id="games" class="game-grid"></div></section>
+
+<section id="wallet" class="panel"><h2>💰 Wallet</h2><div class="wallet-row"><div><small>Available balance</small><h2>UGX <span id="walletBalance">100000</span></h2></div><button onclick="deposit()">Demo deposit</button><button class="secondary" onclick="withdraw()">Demo withdrawal</button></div></section>
+
+<section id="history" class="panel"><h2>📜 Bet history</h2><div id="historyList">No bets yet.</div></section>
+
+<section id="admin" class="panel"><h2>🛠️ Admin dashboard</h2><div class="admin-grid">
+<div><b>Users</b><strong>1</strong></div><div><b>Demo bets</b><strong id="adminBets">0</strong></div><div><b>Demo games</b><strong>20</strong></div><div><b>Status</b><strong>Prototype</strong></div>
+</div><p class="muted">Production deployment would require compliant licensing, KYC/age controls, responsible-gambling tools, approved payments, security, and regulated odds/game providers.</p></section>
+</main>
+
+<aside id="betslip" class="betslip"><div class="slip-head"><h2>🎟️ Bet Slip</h2><button onclick="toggleSlip()">×</button></div><div id="selections">Your selections will appear here.</div>
+<label>Stake (UGX)<input id="stake" type="number" min="100" value="1000"></label><div class="payout">Potential payout: <b>UGX <span id="payout">0</span></b></div><button class="place" onclick="placeBet()">Place demo bet</button></aside>
+<button class="slip-fab" onclick="toggleSlip()">🎟️ <span id="count">0</span></button>
+<div id="modal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><h2 id="modalTitle"></h2><div id="modalBody"></div></div></div>
+<script src="app.js"></script>
+</body></html>
